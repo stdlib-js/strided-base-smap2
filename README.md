@@ -50,13 +50,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import smap2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@deno/mod.js';
+import smap2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@v0.2.2-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@deno/mod.js';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@v0.2.2-deno/mod.js';
 ```
 
 #### smap2( N, x, strideX, y, strideY, z, strideZ, fcn )
@@ -177,7 +177,7 @@ var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-bas
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@deno/mod.js';
 import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
 import addf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-addf@deno/mod.js';
-import smap2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@deno/mod.js';
+import smap2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@v0.2.2-deno/mod.js';
 
 var x = filledarrayBy( 10, 'float32', discreteUniform( -100, 100 ) );
 console.log( x );
