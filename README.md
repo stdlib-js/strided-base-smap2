@@ -43,32 +43,20 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/strided-base-smap2
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var smap2 = require( '@stdlib/strided-base-smap2' );
+import smap2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@deno/mod.js';
+```
+
+You can also import the following named exports from the package:
+
+```javascript
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@deno/mod.js';
 ```
 
 #### smap2( N, x, strideX, y, strideY, z, strideZ, fcn )
@@ -76,8 +64,8 @@ var smap2 = require( '@stdlib/strided-base-smap2' );
 Applies a binary function to single-precision floating-point strided input arrays and assigns results to a single-precision floating-point strided output array.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var addf = require( '@stdlib/number-float32-base-add' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import addf from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float32-base-add@deno/mod.js';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 var y = new Float32Array( [ 2.0, 1.0, 3.0, -2.0, 4.0, 1.0, -1.0, 3.0 ] );
@@ -101,8 +89,8 @@ The function accepts the following arguments:
 The `N` and `stride` parameters determine which strided array elements are accessed at runtime. For example, to index every other value in `x` and to index the first `N` elements of `y` in reverse order,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var addf = require( '@stdlib/number-float32-base-add' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import addf from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float32-base-add@deno/mod.js';
 
 var x = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var y = new Float32Array( [ 1.0, 1.0, 2.0, 2.0, 3.0, 3.0 ] );
@@ -115,8 +103,8 @@ smap2( 3, x, 2, y, -1, z, 1, addf );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][@stdlib/array/float32] views.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var addf = require( '@stdlib/number-float32-base-add' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import addf from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float32-base-add@deno/mod.js';
 
 // Initial arrays...
 var x0 = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
@@ -137,8 +125,8 @@ smap2( 3, x1, -2, y1, 1, z1, 1, addf );
 Applies a binary function to single-precision floating-point strided input arrays and assigns results to a single-precision floating-point strided output array using alternative indexing semantics.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var addf = require( '@stdlib/number-float32-base-add' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import addf from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float32-base-add@deno/mod.js';
 
 var x = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0 ] );
 var y = new Float32Array( [ 1.0, 1.0, 2.0, 2.0, 3.0 ] );
@@ -157,8 +145,8 @@ The function accepts the following addfitional arguments:
 While [`typed array`][@stdlib/array/float32] views mandate a view offset based on the underlying `buffer`, the offset parameters support indexing semantics based on starting indices. For example, to index every other value in `x` starting from the second value and to index the last `N` elements in `y` in reverse order,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var addf = require( '@stdlib/number-float32-base-add' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import addf from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float32-base-add@deno/mod.js';
 
 var x = new Float32Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var y = new Float32Array( [ 1.0, 1.0, 2.0, 2.0, 3.0, 3.0 ] );
@@ -185,11 +173,11 @@ smap2.ndarray( 3, x, 2, 1, y, -1, y.length-1, z, 1, 3, addf );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
-var filledarrayBy = require( '@stdlib/array-filled-by' );
-var Float32Array = require( '@stdlib/array-float32' );
-var addf = require( '@stdlib/number-float32-base-add' );
-var smap2 = require( '@stdlib/strided-base-smap2' );
+var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
+import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@deno/mod.js';
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import addf from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float32-base-add@deno/mod.js';
+import smap2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-smap2@deno/mod.js';
 
 var x = filledarrayBy( 10, 'float32', discreteUniform( -100, 100 ) );
 console.log( x );
@@ -210,127 +198,7 @@ console.log( z );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/strided/base/smap2.h"
-```
-
-#### stdlib_strided_smap2( N, \*X, strideX, \*Y, strideY, \*Z, strideZ, fcn )
-
-Applies a binary function to single-precision floating-point strided input arrays and assigns results to a single-precision floating-point strided output array.
-
-```c
-#include <stdint.h>
-
-static float addf( const float x, const float y ) {
-    return x + y;
-}
-
-float X[] = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f };
-float Y[] = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f };
-float Z[] = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-
-int64_t N = 6;
-
-stdlib_strided_smap2( N, X, 1, Y, 1, Z, 1, addf );
-```
-
-The function accepts the following arguments:
-
--   **N**: `[in] int64_t` number of indexed elements.
--   **X**: `[in] float*` input array.
--   **strideX** `[in] int64_t` index increment for `X`.
--   **Y**: `[in] float*` input array.
--   **strideY**: `[in] int64_t` index increment for `Y`.
--   **Z**: `[out] float*` output array.
--   **strideZ**: `[in] int64_t` index increment for `Z`.
--   **fcn**: `[in] float (*fcn)( float, float )` binary function to apply.
-
-```c
-void stdlib_strided_smap2( const int64_t N, const float *X, const int64_t strideX, const float *Y, const int64_t strideY, float *Z, const int64_t strideZ, float (*fcn)( float, float ) );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/strided/base/smap2.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <inttypes.h>
-
-// Define a callback:
-static float addf( const float x, const float y ) {
-    return x + y;
-}
-
-int main( void ) {
-    // Create input strided arrays:
-    float X[] = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f };
-    float Y[] = { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f };
-
-    // Create an output strided array:
-    float Z[] = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-
-    // Specify the number of elements:
-    int64_t N = 6;
-
-    // Define the strides:
-    int64_t strideX = 1;
-    int64_t strideY = -1;
-    int64_t strideZ = 1;
-
-    // Apply the callback:
-    stdlib_strided_smap2( N, X, strideX, Y, strideY, Z, strideZ, addf );
-
-    // Print the results:
-    for ( int64_t i = 0; i < N; i++ ) {
-        printf( "Z[ %"PRId64" ] = %f\n", i, Z[ i ] );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -356,7 +224,7 @@ int main( void ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -419,13 +287,13 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/strided-base-smap2/main/LICENSE
 
-[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32
+[@stdlib/array/float32]: https://github.com/stdlib-js/array-float32/tree/deno
 
 <!-- <related-links> -->
 
-[@stdlib/strided/base/dmap2]: https://github.com/stdlib-js/strided-base-dmap2
+[@stdlib/strided/base/dmap2]: https://github.com/stdlib-js/strided-base-dmap2/tree/deno
 
-[@stdlib/strided/base/binary]: https://github.com/stdlib-js/strided-base-binary
+[@stdlib/strided/base/binary]: https://github.com/stdlib-js/strided-base-binary/tree/deno
 
 <!-- </related-links> -->
 
