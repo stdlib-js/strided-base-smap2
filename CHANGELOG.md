@@ -24,6 +24,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`c3789be`](https://github.com/stdlib-js/stdlib/commit/c3789bef602f59a085b2dd60fe691357e323da99) - **docs:** fix example _(by Athan Reines)_
 -   [`786e059`](https://github.com/stdlib-js/stdlib/commit/786e0590341f600854e001e75285b7a6afdb7319) - **chore:** fix C lint errors [(#10418)](https://github.com/stdlib-js/stdlib/pull/10418) _(by Geo Daoyu)_
 
 </details>
@@ -36,8 +37,9 @@ This release closes the following issue:
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 2 people contributed to this release. Thank you to the following contributors:
 
+-   Athan Reines
 -   Geo Daoyu
 
 </section>
