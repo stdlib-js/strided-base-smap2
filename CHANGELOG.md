@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-04-12)
+## Unreleased (2026-04-19)
 
 <section class="issues">
 
@@ -24,6 +24,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`a7a9c99`](https://github.com/stdlib-js/stdlib/commit/a7a9c996c179dcdbfc6468281bc6323d53d6f51f) - **bench:** refactor to use string interpolation in `@stdlib/strided-base` [(#11451)](https://github.com/stdlib-js/stdlib/pull/11451) _(by Uday Kakade, Karan Anand)_
 -   [`c3789be`](https://github.com/stdlib-js/stdlib/commit/c3789bef602f59a085b2dd60fe691357e323da99) - **docs:** fix example _(by Athan Reines)_
 -   [`786e059`](https://github.com/stdlib-js/stdlib/commit/786e0590341f600854e001e75285b7a6afdb7319) - **chore:** fix C lint errors [(#10418)](https://github.com/stdlib-js/stdlib/pull/10418) _(by Geo Daoyu)_
 
@@ -37,10 +38,12 @@ This release closes the following issue:
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Geo Daoyu
+-   Karan Anand
+-   Uday Kakade
 
 </section>
 
